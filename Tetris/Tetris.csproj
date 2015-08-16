@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{51555CCE-8174-420D-BAB0-9F1DA2171C24}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Tetris</RootNamespace>
+    <AssemblyName>Tetris</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Externalconsole>true</Externalconsole>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Externalconsole>true</Externalconsole>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tetris.cs" />
+    <Compile Include="Input\IInput.cs" />
+    <Compile Include="GameLoop.cs" />
+    <Compile Include="View\View.cs" />
+    <Compile Include="Input\Keyboard.cs" />
+    <Compile Include="GameManager.cs" />
+    <Compile Include="Scene\IScene.cs" />
+    <Compile Include="Scene\GameScene.cs" />
+    <Compile Include="Scene\StartScene.cs" />
+    <Compile Include="Scene\EndScene.cs" />
+    <Compile Include="Scene\SceneSwitcher.cs" />
+    <Compile Include="View\StartView.cs" />
+    <Compile Include="View\EndView.cs" />
+    <Compile Include="Game\Cells.cs" />
+    <Compile Include="Game\CellColor.cs" />
+    <Compile Include="Game\Tetrimino.cs" />
+    <Compile Include="Game\TetriminoGenerator.cs" />
+    <Compile Include="Game\GameController.cs" />
+    <Compile Include="View\GameView.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Input\" />
+    <Folder Include="View\" />
+    <Folder Include="Scene\" />
+    <Folder Include="Game\" />
+  </ItemGroup>
+</Project>
