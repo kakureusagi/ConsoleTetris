@@ -46,6 +46,10 @@ namespace Tetris.Game {
 			int random = new Random().Next(patterns.Count);
 			return new Tetrimino(2, 0, patterns[random]);
 		}
+
+		public static Tetrimino Copy(Tetrimino tetrimino) {
+			return new Tetrimino(tetrimino);
+		}
 	}
 }
 

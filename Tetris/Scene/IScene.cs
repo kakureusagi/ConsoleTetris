@@ -1,8 +1,9 @@
 ﻿using System;
+using Tetris.Input;
 
 namespace Tetris.Scene {
 	public interface IScene {
-		void Update();
+		IScene Update(IInput input);
 		bool IsApplicationFinish();
 	}
 }

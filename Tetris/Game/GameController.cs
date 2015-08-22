@@ -17,20 +17,17 @@ namespace Tetris.Game {
 		}
 		public bool isGameOver { get; private set; }
 
-		private readonly IInput input;
-
 		private Tetrimino currentTetrimino;
 		private DateTime time;
 
 
-		public GameController(IInput input) {
-			this.input = input;
+		public GameController() {
 			cells = new Cells();
 			currentTetrimino = TetriminoGenerator.CreateRandomTetrimino();
 			time = DateTime.Now;
 		}
 
-		public void Update() {
+		public void Update(IInput input) {
 			bool autoBottomShift = false;
 			double timeFromDown = (DateTime.Now - time).TotalMilliseconds;
 			if (timeFromDown >= AUTO_BOTTOM_SHIFT_MILLISECONDS) {
@@ -39,35 +36,35 @@ namespace Tetris.Game {
 			}
 
 			if (input.leftRotation) {
-				Tetrimino copy = new Tetrimino(currentTetrimino);
+				Tetrimino copy = TetriminoGenerator.Copy(currentTetrimino);
 				copy.RotateLeft();
 				if (cells.IsReflection(copy)) {
 					currentTetrimino = copy;
 				}
 			}
 			if (input.rightRotation) {
-				Tetrimino copy = new Tetrimino(currentTetrimino);
+				Tetrimino copy = TetriminoGenerator.Copy(currentTetrimino);
 				copy.RotateRight();
 				if (cells.IsReflection(copy)) {
 					currentTetrimino = copy;
 				}
 			}
 			if (input.left) {
-				Tetrimino copy = new Tetrimino(currentTetrimino);
+				Tetrimino copy = TetriminoGenerator.Copy(currentTetrimino);
 				copy.MoveLeft();
 				if (cells.IsReflection(copy)) {
 					currentTetrimino = copy;
 				}
 			}
 			if (input.right) {
-				Tetrimino copy = new Tetrimino(currentTetrimino);
+				Tetrimino copy = TetriminoGenerator.Copy(currentTetrimino);
 				copy.MoveRight();
 				if (cells.IsReflection(copy)) {
 					currentTetrimino = copy;
 				}
 			}
 			if (input.down || autoBottomShift) {
-				Tetrimino copy = new Tetrimino(currentTetrimino);
+				Tetrimino copy = TetriminoGenerator.Copy(currentTetrimino);
 				copy.MoveDown();
 				if (cells.IsReflection(copy)) {
 					currentTetrimino = copy;

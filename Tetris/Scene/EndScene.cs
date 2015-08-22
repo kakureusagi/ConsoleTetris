@@ -5,19 +5,18 @@ using Tetris.View;
 namespace Tetris.Scene {
 	public class EndScene : IScene {
 
-		private readonly IInput input;
 		private readonly EndView view;
 
 		private bool applicationFinish;
 
-		public EndScene(IInput input) {
-			this.input = input;
+		public EndScene() {
 			view = new EndView();
 		}
 
-		public void Update() {
+		public IScene Update(IInput input) {
 			applicationFinish = input.finish;
 			view.Refresh();
+			return this;
 		}
 
 		public bool IsApplicationFinish() {

@@ -9,15 +9,12 @@ namespace Tetris {
 
 		public void Run() {
 			IInput input = new Keyboard();
-			SceneSwitcher sceneSwitcher = new SceneSwitcher(input);
-			sceneSwitcher.SwitchTo(SceneSwitcher.Scene.Start);
+			IScene scene = new StartScene();
 
 			try {
 				while (true) {
 					input.Update();
-
-					IScene scene = sceneSwitcher.currentScene;
-					scene.Update();
+					scene = scene.Update(input);
 					if (scene.IsApplicationFinish()) {
 						break;
 					}

@@ -6,31 +6,26 @@ using Tetris.View;
 namespace Tetris.Scene {
 	public class GameScene : IScene {
 
-		private readonly SceneSwitcher sceneSwitcher;
-		private readonly IInput input;
 		private readonly GameController gameController;
 		private readonly GameView gameView;
 
-		public GameScene(SceneSwitcher sceneSwitcher, IInput input) {
-			this.sceneSwitcher = sceneSwitcher;
-			this.input = input;
-			gameController = new GameController(input);
+		public GameScene() {
+			gameController = new GameController();
 			gameView = new GameView();
 		}
 
-		public void Update() {
+		public IScene Update(IInput input) {
 			if (input.finish) {
-				sceneSwitcher.SwitchTo(SceneSwitcher.Scene.End);
-				return;
+				return new EndScene();
 			}
 
-			gameController.Update();
+			gameController.Update(input);
 			if (gameController.isGameOver) {
-				sceneSwitcher.SwitchTo(SceneSwitcher.Scene.End);
-				return;
+				return new EndScene();
 			}
 
 			gameView.Refresh(gameController.cellColors);
+			return this;
 		}
 
 		public bool IsApplicationFinish() {
