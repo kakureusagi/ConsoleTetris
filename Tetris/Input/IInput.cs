@@ -1,6 +1,10 @@
 ﻿using System;
 
 namespace Tetris.Input {
+
+	/// <summary>
+	/// 入力担当.
+	/// </summary>
 	public interface IInput {
 		void Update();
 

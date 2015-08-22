@@ -5,6 +5,10 @@ using Tetris.View;
 using Tetris.Scene;
 
 namespace Tetris {
+
+	/// <summary>
+	/// ゲームのループ担当.
+	/// </summary>
 	public class GameLoop {
 
 		public void Run() {

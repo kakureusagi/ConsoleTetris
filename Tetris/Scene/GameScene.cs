@@ -4,6 +4,10 @@ using Tetris.Game;
 using Tetris.View;
 
 namespace Tetris.Scene {
+
+	/// <summary>
+	/// テトリス部分のシーン担当.
+	/// </summary>
 	public class GameScene : IScene {
 
 		private readonly GameController gameController;

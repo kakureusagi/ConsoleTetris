@@ -5,6 +5,10 @@ using Tetris.Input;
 
 
 namespace Tetris.Game {
+
+	/// <summary>
+	/// テトリス部分の進行を行うクラス.
+	/// </summary>
 	public class GameController {
 
 		private const double AUTO_BOTTOM_SHIFT_MILLISECONDS = 1000;

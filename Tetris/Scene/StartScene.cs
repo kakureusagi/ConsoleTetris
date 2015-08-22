@@ -3,6 +3,10 @@ using Tetris.View;
 using Tetris.Input;
 
 namespace Tetris.Scene {
+
+	/// <summary>
+	/// ゲーム開始シーンの描画担当.
+	/// </summary>
 	public class StartScene : IScene {
 
 		private readonly StartView view;

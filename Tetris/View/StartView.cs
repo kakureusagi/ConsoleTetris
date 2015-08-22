@@ -2,6 +2,10 @@
 using System;
 
 namespace Tetris.View {
+
+	/// <summary>
+	/// ゲーム開始時のシーン.
+	/// </summary>
 	public class StartView {
 
 		private bool print;

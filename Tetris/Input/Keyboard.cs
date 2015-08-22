@@ -1,6 +1,10 @@
 ﻿using System;
 
 namespace Tetris.Input {
+
+	/// <summary>
+	/// キーボードからの入力を扱うクラス.
+	/// </summary>
 	public class Keyboard : IInput {
 
 		private ConsoleKeyInfo keyInfo;

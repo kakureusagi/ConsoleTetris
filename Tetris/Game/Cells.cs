@@ -3,6 +3,10 @@ using System.Linq;
 using System.Collections.Generic;
 
 namespace Tetris.Game {
+
+	/// <summary>
+	/// マス全体を管理するクラス.
+	/// </summary>
 	public class Cells {
 
 		private const int WiDTH = 8;

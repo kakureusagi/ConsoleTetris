@@ -3,6 +3,10 @@ using System.Text;
 using Tetris.Game;
 
 namespace Tetris.View {
+
+	/// <summary>
+	/// ゲームシーンの描画担当.
+	/// </summary>
 	public class GameView {
 
 		private StringBuilder buffer;

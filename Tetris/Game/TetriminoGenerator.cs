@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 
 namespace Tetris.Game {
+
+	/// <summary>
+	/// テトリミノの生成担当.
+	/// </summary>
 	public class TetriminoGenerator {
 
 		private static readonly List<CellColor[,]> patterns = new List<CellColor[,]> {

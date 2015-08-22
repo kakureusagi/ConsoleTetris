@@ -2,6 +2,9 @@
 
 namespace Tetris.Game {
 
+	/// <summary>
+	/// テトリミノ１つ分を管理するクラス.
+	/// </summary>
 	public class Tetrimino {
 
 		public int leftTopX { get; private set;}
